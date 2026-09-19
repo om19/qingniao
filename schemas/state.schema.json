@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://qingniao.local/schemas/state.schema.json",
+  "title": "QingNiaoSessionState",
+  "type": "object",
+  "required": ["topic", "phase", "updated_at"],
+  "properties": {
+    "topic": {
+      "type": "string",
+      "description": "议题 slug，默认 current"
+    },
+    "phase": {
+      "type": "string",
+      "enum": [
+        "idle",
+        "listening_a",
+        "listening_b",
+        "draft_pending_a",
+        "draft_pending_b",
+        "awaiting_reply_a",
+        "awaiting_reply_b",
+        "converging",
+        "summary_pending",
+        "resolved",
+        "paused",
+        "crisis"
+      ]
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "facts": {
+      "type": "object",
+      "properties": {
+        "A": { "type": "string" },
+        "B": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "feelings": {
+      "type": "object",
+      "properties": {
+        "A": { "type": "string" },
+        "B": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "needs": {
+      "type": "object",
+      "properties": {
+        "A": { "type": "string" },
+        "B": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "pending_draft": {
+      "type": ["object", "null"],
+      "required": ["from", "to", "text", "created_at"],
+      "properties": {
+        "from": { "type": "string", "enum": ["A", "B"] },
+        "to": { "type": "string", "enum": ["A", "B"] },
+        "text": { "type": "string" },
+        "created_at": { "type": "string", "format": "date-time" }
+      },
+      "additionalProperties": false
+    },
+    "consents": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["who", "what", "at"],
+        "properties": {
+          "who": { "type": "string", "enum": ["A", "B"] },
+          "what": { "type": "string" },
+          "at": { "type": "string", "format": "date-time" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "summary_acks": {
+      "type": "object",
+      "properties": {
+        "A": { "type": "boolean" },
+        "B": { "type": "boolean" }
+      },
+      "additionalProperties": false
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}

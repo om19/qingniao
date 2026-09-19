@@ -1,0 +1,11 @@
+.env
+.DS_Store
+sessions/current/
+sessions/e2e-dryrun/
+config/partners.yaml
+docs/*.local.md
+*.log
+credentials.env
+__pycache__/
+*.pyc
+

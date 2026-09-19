@@ -1,0 +1,35 @@
+# 青鸟 · 双方身份映射（样例）
+# 复制为 partners.yaml 后填入真实信息：
+#   cp config/partners.example.yaml config/partners.yaml
+#
+# partners.yaml 已 gitignore，勿把真实 userId / 昵称推到远程。
+#
+# 称呼规则：
+#   bot_name  —— 青鸟当面称呼此人（得体、不越界）
+#   pet_name  —— 双方互称的亲密昵称（仅用于理解关系/转述稿里「对方怎么叫你」；
+#                青鸟绝不拿 pet_name 当面叫人）
+
+couple:
+  id: default
+  display_topic: current
+
+partners:
+  A:
+    role: A
+    bot_name: "甲方称呼"
+    pet_name: ""
+    dingtalk_user_id: "REPLACE_A_USER_ID"
+    feishu_user_id: ""
+    notes: ""
+  B:
+    role: B
+    bot_name: "乙方称呼"
+    pet_name: ""
+    dingtalk_user_id: "REPLACE_B_USER_ID"
+    feishu_user_id: ""
+    notes: ""
+
+# 管理员：可执行 /mode /dir 等管理指令的人
+admin:
+  dingtalk_user_id: "REPLACE_ADMIN_USER_ID"
+  bot_name: "管理员称呼"

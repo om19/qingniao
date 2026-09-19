@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="QingNiao">
+  <defs>
+    <linearGradient id="sky" x1="18" y1="8" x2="112" y2="120" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#5B8DEF"/>
+      <stop offset="1" stop-color="#1E4BA8"/>
+    </linearGradient>
+  </defs>
+  <circle cx="64" cy="64" r="60" fill="url(#sky)"/>
+  <path fill="#F7FBFF" d="M28 74c14-22 32-34 54-38-8 10-12 20-10 32 12-4 24-2 36 8-10 2-20 1-28-4-2 12-10 22-24 28-6-10-14-18-28-26z"/>
+  <circle cx="86" cy="42" r="3.2" fill="#1E3A8A"/>
+</svg>

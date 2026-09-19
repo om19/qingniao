@@ -1,0 +1,29 @@
+# 复制到 ~/.cc-connect/config.toml 后填入真实值
+# cp docs/cc-connect.config.example.toml ~/.cc-connect/config.toml
+
+[[projects]]
+name = "qingniao"
+admin_from = "YOUR_DINGTALK_USER_ID"
+reset_on_idle_mins = 30
+
+[projects.agent]
+type = "cursor"
+# 切换 Codex 时改为：
+# type = "codex"
+
+[projects.agent.options]
+work_dir = "/ABS/PATH/TO/qingniao"
+mode = "force"
+cmd = "agent"
+# Codex 时改为：
+# mode = "yolo"
+# # cmd 默认 codex，可省略
+
+[[projects.platforms]]
+type = "dingtalk"
+
+[projects.platforms.options]
+client_id = "YOUR_APP_KEY"
+client_secret = "REPLACE_ME"
+reaction_emoji = "none"
+done_emoji = "none"
